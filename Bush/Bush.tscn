@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwur873o0dubw"]
+
+[ext_resource type="Script" uid="uid://d2n3c7e3cngvl" path="res://Bush/bush.gd" id="1_a8vke"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_seodi"]
+albedo_color = Color(0.25882354, 1, 0.48235294, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_a8vke"]
+lightmap_size_hint = Vector2i(17, 9)
+radial_segments = 8
+rings = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulumj"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Bush" type="Node3D"]
+script = ExtResource("1_a8vke")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["Bush"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49555385, 0)
+material_override = SubResource("StandardMaterial3D_seodi")
+mesh = SubResource("SphereMesh_a8vke")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.04465002, 0.17566699, -0.0845428, 0, 0.086731814, 0.1802154, 0.19495223, -0.040233105, 0.019362886, 0.24939716, 0.40102172, 0)
+material_override = SubResource("StandardMaterial3D_ulumj")
+mesh = SubResource("SphereMesh_a8vke")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.04465002, 0.17566699, -0.0845428, 0, 0.086731814, 0.1802154, 0.19495223, -0.040233105, 0.019362886, -0.12535694, 0.40102172, -0.21575153)
+material_override = SubResource("StandardMaterial3D_ulumj")
+mesh = SubResource("SphereMesh_a8vke")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.04465002, 0.17566699, -0.0845428, 0, 0.086731814, 0.1802154, 0.19495223, -0.040233105, 0.019362886, 0.10427916, 0.07856333, -0.4126321)
+material_override = SubResource("StandardMaterial3D_ulumj")
+mesh = SubResource("SphereMesh_a8vke")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.04465002, 0.17566699, -0.0845428, 0, 0.086731814, 0.1802154, 0.19495223, -0.040233105, 0.019362886, -0.22568566, 0.07856333, 0.39045787)
+material_override = SubResource("StandardMaterial3D_ulumj")
+mesh = SubResource("SphereMesh_a8vke")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.04465002, 0.17566699, -0.0845428, 0, 0.086731814, 0.1802154, 0.19495223, -0.040233105, 0.019362886, 0.47241962, 0.07856333, 0.011647761)
+material_override = SubResource("StandardMaterial3D_ulumj")
+mesh = SubResource("SphereMesh_a8vke")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.04465002, 0.17566699, -0.0845428, 0, 0.086731814, 0.1802154, 0.19495223, -0.040233105, 0.019362886, -0.4752462, 0.07856333, 0.011647761)
+material_override = SubResource("StandardMaterial3D_ulumj")
+mesh = SubResource("SphereMesh_a8vke")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.04465002, 0.17566699, -0.0845428, 0, 0.086731814, 0.1802154, 0.19495223, -0.040233105, 0.019362886, -0.31711984, 0.07856333, -0.3388464)
+material_override = SubResource("StandardMaterial3D_ulumj")
+mesh = SubResource("SphereMesh_a8vke")

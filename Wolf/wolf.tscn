@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://boe7rr34d4h4a"]
+
+[ext_resource type="Texture2D" uid="uid://b1hbxxbw7jaxr" path="res://Wolf/wolf_Wolf.png" id="1_38o6x"]
+[ext_resource type="Script" uid="uid://djasdv4ss4gbg" path="res://Wolf/wolf.gd" id="1_se4sg"]
+[ext_resource type="ArrayMesh" uid="uid://bvjiwk2yig07b" path="res://Wolf/wolf.obj" id="2_se4sg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhit7"]
+albedo_color = Color(0.47560975, 0.47560975, 0.47560975, 1)
+albedo_texture = ExtResource("1_38o6x")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_se4sg"]
+size = Vector3(1.4866333, 1.9611511, 3.522461)
+
+[node name="Wolf" type="CharacterBody3D"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_se4sg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.5272024, 0)
+material_override = SubResource("StandardMaterial3D_vhit7")
+mesh = ExtResource("2_se4sg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Wolf"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07254036, 1.0135155, 0.340281)
+shape = SubResource("BoxShape3D_se4sg")

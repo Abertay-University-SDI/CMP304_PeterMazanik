@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5mqswm6nsac8"]
+
+[ext_resource type="Script" uid="uid://13gcwk1cv8hu" path="res://Menu/main_menu.gd" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://ckcpbej1bga0f" path="res://Menu/MainMenu.png" id="2_swd6r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tma8a"]
+texture = ExtResource("2_swd6r")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjwba"]
+bg_color = Color(0, 0, 0, 0.1254902)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swd6r"]
+bg_color = Color(0, 1, 0, 0.1254902)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i26rj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tma8a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -137.5
+offset_right = 243.5
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_swd6r")
+text = "Start Simulation"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_swd6r")
+text = "Exit Simulation"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_top = 19.0
+offset_right = 288.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Ecosystem Simmulation"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 179.0
+offset_top = 79.99999
+offset_right = 388.0
+offset_bottom = 114.99999
+grow_horizontal = 2
+rotation = -0.12256464
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "By Peter Mazanik"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit"]

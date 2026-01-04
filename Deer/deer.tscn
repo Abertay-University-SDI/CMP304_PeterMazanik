@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbfh4mk4vxmd"]
+
+[ext_resource type="ArrayMesh" uid="uid://shxth3qynb8b" path="res://Deer/deer.obj" id="1_3nj34"]
+[ext_resource type="Script" uid="uid://cd8coe1itf433" path="res://Deer/deer.gd" id="1_ey1dv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ey1dv"]
+size = Vector3(1, 1.8526611, 2.6298828)
+
+[node name="Deer" type="CharacterBody3D" groups=["Deer"]]
+script = ExtResource("1_ey1dv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("1_3nj34")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9308723, -0.09057814)
+shape = SubResource("BoxShape3D_ey1dv")
